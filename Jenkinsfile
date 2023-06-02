@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 
-node ("Jenkins-Pipeline"){
+node ("aws_jenkins_node"){
     echo "Hello, World"
     stage ('Checkout'){
         checkout changelog: false, poll: false, scm: scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Git-credentials', url: 'https://github.com/GitRonald2023/terraform-modulos.git']])
